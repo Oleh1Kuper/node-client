@@ -6,7 +6,7 @@ const options = {
     token: 'sometoken',
   },
 }
-const socket = io(`http://127.0.0.1:${process.env.PORT}`, options);
+const socket = io(`http://localhost:${process.env.PORT}`, options);
 
 socket.on('connect', () => {
   const networkInterface = os.networkInterfaces();
@@ -16,7 +16,7 @@ socket.on('connect', () => {
     const isInternetFacing = !networkInterface[key][0].internal;
 
     if (isInternetFacing) {
-      macA = networkInterface[key][0].mac + Math.floor(Math.random() * 1000000);
+      macA = networkInterface[key][0].mac;
     }
   }
 
