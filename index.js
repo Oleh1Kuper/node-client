@@ -6,7 +6,7 @@ const options = {
     token: 'sometoken',
   },
 }
-const socket = io(`http://localhost:${process.env.PORT}`, options);
+const socket = io(`http://localhost:${process.env.PORT || 3000}`, options);
 
 socket.on('connect', () => {
   const networkInterface = os.networkInterfaces();
