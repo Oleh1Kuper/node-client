@@ -6,8 +6,7 @@ const options = {
     token: 'sometoken',
   },
 }
-// const socket = io(`http://localhost:${process.env.PORT || 3000}`, options);
-const socket = io('https://socket-io-server-l9o1.onrender.com', options);
+const socket = io(`http://localhost:${process.env.PORT || 3000}`, options);
 
 socket.on('connect', () => {
   const networkInterface = os.networkInterfaces();
